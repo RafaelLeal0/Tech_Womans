@@ -1,0 +1,104 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+        .hero {
+            background: url('fundo_home.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            width: 100%;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1; 
+        }
+        .overlay {
+            position: relative;
+            z-index: 2; 
+        }
+        .highlight {
+            color: pink;
+        }
+
+        button {
+            background-color: pink;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background: #CE7095; 
+            padding: 20px;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            gap: 1000px;
+        }
+        
+        footer button {
+            background-color: pink;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+        
+        footer button:hover {
+            background-color: #ff69b4;
+        }
+        
+        footer img {
+            width: 130px; 
+            height: auto; 
+        }
