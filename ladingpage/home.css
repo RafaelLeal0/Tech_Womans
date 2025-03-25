@@ -11,7 +11,6 @@ body {
     background-color: #fffff5;
     text-align: center;
     overflow-x: hidden;
-    font-family: 'Inter', sans-serif;
 }
 
 .hero {
@@ -27,10 +26,10 @@ body {
     animation: fadeIn 2s ease-in-out;
 }
 
-.hero h1{
-    margin-left: -600px;
+.hero h1 {
     text-align: left;
     font-size: 50px;
+    margin-left: -600px;
 }
 
 .hero::before {
@@ -41,7 +40,7 @@ body {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1; 
+    z-index: 1;
 }
 
 .overlay {
@@ -53,52 +52,47 @@ body {
 }
 
 .highlight {
-    color: pink;
+    color: #bd7481;
 }
 
-.container {
+.woman {
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+    position: relative;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.woman::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.woman .content {
+    position: relative;
+    z-index: 2;
     padding: 20px;
-    text-align: left;
-}
-
-
-.card {
-    background: #ffffff;
-    padding: 20px;
-    margin: 15px;
+    max-width: 600px;
+    text-align: center;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    margin-left: 10px;
 }
 
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.card p {
-    margin-top: 10px;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 10px;
+.woman:hover {
+    transform: scale(1.02);
 }
 
 footer {
-    background: #d59fb5; 
+    background: #d59fb5;
     padding: 20px;
     color: white;
     display: flex;
@@ -108,35 +102,34 @@ footer {
 
 .footer-content {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px; 
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 20px; 
+    padding: 10px 20px;
 }
 
-
 footer button {
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border: none;
     padding: 12px 20px;
     border-radius: 40px;
     cursor: pointer;
-    color: rgb(0, 0, 0);
+    color: black;
     font-weight: bold;
     transition: background 0.3s ease;
+    animation: pulse 1.5s infinite;
 }
 
 footer img {
-    width: 150px; 
-    height: auto; 
+    width: 150px;
+    height: auto;
 }
 
 .footer-content h3 {
     flex: 1;
-    text-align: center; 
-    margin-left: -90px;
+    text-align: center;
 }
 
 @keyframes fadeIn {
@@ -153,10 +146,6 @@ footer img {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
-}
-
-footer button {
-    animation: pulse 1.5s infinite;
 }
 
 #backToTop {
@@ -181,3 +170,114 @@ footer button {
     transform: scale(1);
 }
 
+@media (max-width: 1024px) {
+    .hero {
+        height: 600px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .overlay {
+        text-align: center;
+    }
+
+    .woman {
+        height: 50vh;
+    }
+
+    .woman .content {
+        max-width: 90%;
+        font-size: 16px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    footer img {
+        width: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .overlay {
+        font-size: 18px;
+    }
+
+    .woman {
+        height: 40vh;
+    }
+
+    .woman .content {
+        max-width: 95%;
+        font-size: 14px;
+    }
+
+    #backToTop {
+        bottom: 15px;
+        right: 15px;
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .overlay {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .woman {
+        height: 35vh;
+    }
+
+    .woman .content {
+        font-size: 12px;
+    }
+
+    #backToTop {
+        bottom: 10px;
+        right: 10px;
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    .footer-content h3 {
+        font-size: 14px;
+    }
+}
